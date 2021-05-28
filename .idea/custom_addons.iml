@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="src" />
     <orderEntry type="module" module-name="hospital" />
+    <orderEntry type="module" module-name="huzaifaOdooTrainin" />
   </component>
 </module>
