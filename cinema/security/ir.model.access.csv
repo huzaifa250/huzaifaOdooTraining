@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cinema_cinema,cinema.cinema,model_cinema_cinema,,1,1,1,1
+access_film_film,film.film,model_film_film,,1,1,1,1

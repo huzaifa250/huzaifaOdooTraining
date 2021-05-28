@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- list view of film-->
+
+        <record model="ir.ui.view" id="film_list">
+            <field name="name">film.tree.view</field>
+            <field name="model">film.film</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="f_name" string="Name"/>
+                    <field name="type" string="Category"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+        <!--form view of film-->
+        <record model="ir.ui.view" id="film_form">
+            <field name="name">film.form.view</field>
+            <field name="model">film.film</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="f_name"/>
+                        <field name="type"/>
+                    </group>
+                    <group>
+                        <field name="date"/>
+                        <field name="info"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+        <!--Film search view -->
+        <record model="ir.ui.view" id="film_search_view">
+            <field name="name">Film Search</field>
+            <field name="model">film.film</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="f_name"/>
+                    <field name="type"/>
+                    <filter name="film_type" string="Film Type"
+                            domain="[('type','=','A')]"/>
+                </search>
+            </field>
+        </record>
+        <!--actions opening views on film-->
+
+        <record model="ir.actions.act_window" id="film_action_window">
+            <field name="name">Films</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">film.film</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    create a new film!
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Films" id="film_main_menu" parent="cinema_menu_root"
+                  sequence="4"
+        />
+        <menuitem name="Film" id="film_sub_menu" parent="film_main_menu"
+                  sequence="5" action="film_action_window"/>
+    </data>
+</odoo>

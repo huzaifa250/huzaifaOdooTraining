@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="cinema_list">
+            <field name="name">Cinema List</field>
+            <field name="model">cinema.cinema</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="set_no"/>
+                </tree>
+            </field>
+        </record>
+        <!--form view -->
+        <record model="ir.ui.view" id="cinema_form">
+            <field name="name">Cinema Form</field>
+            <field name="model">cinema.cinema</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="set_no"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+        <!--Cinema Search view -->
+        <record model="ir.ui.view" id="cinema_search_view">
+            <field name="name">Cinema Search</field>
+            <field name="model">cinema.cinema</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="set_no"/>
+                    <filter name="cinema_name" string="Cinema Name"
+                            domain="[('name','=','Afraa')]"/>
+                </search>
+            </field>
+        </record>
+
+        <!--actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="cinema_action_window">
+            <field name="name">Cinema</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cinema.cinema</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    create a new records!
+                </p>
+            </field>
+        </record>
+        <menuitem name="Cinema" id="cinema_menu_root" sequence="1"/>
+        <menuitem name="Cinema" id="cinema_sub_menu" parent="cinema_menu_root" sequence="2"
+                  action="cinema_action_window"
+        />
+
+    </data>
+</odoo>
