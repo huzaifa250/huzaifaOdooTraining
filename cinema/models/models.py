@@ -8,7 +8,7 @@ class Cinema(models.Model):
     _name = 'cinema.cinema'
     _description = 'An Erp System for Cinema'
 
-    name = fields.Char('Cinema Name', required=True)
+    name = fields.Char('Name', required=True)
     set_no = fields.Integer('Sets')
     description = fields.Text('Description')
 

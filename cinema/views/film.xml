@@ -4,7 +4,7 @@
         <!-- list view of film-->
 
         <record model="ir.ui.view" id="film_list">
-            <field name="name">film.tree.view</field>
+            <field name="name">Films List</field>
             <field name="model">film.film</field>
             <field name="arch" type="xml">
                 <tree>
@@ -16,19 +16,24 @@
         </record>
         <!--form view of film-->
         <record model="ir.ui.view" id="film_form">
-            <field name="name">film.form.view</field>
+            <field name="name">Film form view</field>
             <field name="model">film.film</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="f_name"/>
-                        <field name="type"/>
-                    </group>
-                    <group>
-                        <field name="date"/>
-                        <field name="info"/>
-                    </group>
-
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="f_name"/>
+                                <field name="type"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="info"/>
+                            </group>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -48,7 +53,9 @@
         <!--actions opening views on film-->
 
         <record model="ir.actions.act_window" id="film_action_window">
-            <field name="name">Films</field>
+            <field name="name">
+                Films
+            </field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">film.film</field>
             <field name="view_mode">tree,form</field>

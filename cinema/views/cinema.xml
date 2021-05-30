@@ -20,11 +20,13 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="name"/>
+                            <field name="name" help="Cinema Name"/>
                             <field name="set_no"/>
                         </group>
                         <group>
-                            <field name="description"/>
+                            <group>
+                                <field name="description"/>
+                            </group>
                         </group>
                     </sheet>
 
