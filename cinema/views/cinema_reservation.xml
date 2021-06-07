@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <!-- explicit list view  -->
+
+        <record model="ir.ui.view" id="reservation_tree">
+            <field name="name">Reservation List</field>
+            <field name="model">cinema.show.reservation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="show"/>
+                    <field name="reserve_id_inverse"/>
+                </tree>
+            </field>
+        </record>
+        <!--form view -->
+        <record model="ir.ui.view" id="cinema_reservation_form">
+            <field name="name">Cinema Reservation Form</field>
+            <field name="model">cinema.show.reservation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="show"/>
+                                <field name="reserve_id_inverse"/>
+                            </group>
+                        </group>
+                        <group>
+                            <notebook>
+
+                                <page name="reserve" string="ReservationM2m">
+                                    <group>
+
+                                        <field name="m2m_real" widget="many2many"/>
+                                    </group>
+
+
+                                </page>
+
+                            </notebook>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="reservation_action_window">
+            <field name="name">Reservation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cinema.show.reservation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    create new record!
+                </p>
+            </field>
+        </record>
+        <menuitem name="Reservation" id="cinema_reservation_menu_root" parent="cinema_menu_root"
+                  sequence="4" action="reservation_action_window"
+        />
+    </data>
+</odoo>
