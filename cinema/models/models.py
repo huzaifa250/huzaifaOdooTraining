@@ -7,15 +7,33 @@ from odoo.exceptions import ValidationError, UserError
 
 class Cinema(models.Model):
     _name = 'cinema.show'
-
     _description = 'An Erp System for Cinema'
-    start = fields.Date('Start Date')
-    show_hall = fields.Char('Show Hall', copy=True)
-    nums_sets = fields.Integer('Number of Sets')
+    _rec_name = 'movie_name'
+
+    movie_name = fields.Many2one('film.film', string='Movie Name')
+    start = fields.Date('Start Date', default=lambda self: fields.Date.today())
+    show_hall = fields.Char('Show Hall', copy=True, required=True)
+    nums_sets = fields.Integer('Number of Sets', required=True)
     reserved_seat_no = fields.Integer('Reserved Seats Number')
     halls_supervisor = fields.Many2one('hr.employee', string='Supervisor')
-    name = fields.Many2one('film.film', string='Movie Name', required=True)
+    requester = fields.Char('Requester', required=True)
     reservation_ids = fields.One2many('cinema.show.reservation', 'reserve_id_inverse', string='Reservation Ids')
+
+    @api.constrains('requester', 'movie_name')
+    def _check_request_movies(self):
+        for rec in self:
+            result = self.env['cinema.show'].search(
+                [('requester', '=', rec.requester), ('movie_name', '=', rec.movie_name.id)
+                 ])
+            if len(result) > 1:
+                raise ValidationError(_('Requester must not have more than request in same day.'))
+
+    def name_get(self):
+        result = []
+        for record in self:
+            result.append((record.id, record.show_hall + '/' + str(record.start)))
+
+        return result
 
     def smart_button(self):
         for rec in self:
@@ -32,9 +50,8 @@ class Cinema(models.Model):
 
 class Film(models.Model):
     _name = 'film.film'
-    _rec_name = 'movie_name'
 
-    movie_name = fields.Char('Movie Name')
+    name = fields.Char('Name', required=True)
     movie_duration = fields.Float('Movie Duration')
     currency_id = fields.Many2one('res.currency', string='Currency')
     price = fields.Monetary('Price', required=True)
@@ -42,25 +59,8 @@ class Film(models.Model):
     tickets_sold = fields.Boolean('Tickets are Sold out')
     description = fields.Text('Description')
     sequence = fields.Char(readonly=True, copy=False, default='New')
-    requester = fields.Char('Requester')
 
-    def name_get(self):
-        result = []
-        for record in self:
-            result.append((record.id, record.movie_name + '/' + str(record.movie_date)))
-            # show_hall in another model + there is no relation
-        return result
-
-    @api.constrains('requester', 'movie_name')
-    def _check_request_movies(self):
-        for rec in self:
-            result = self.env['film.film'].search(
-                [('requester', '=', rec.requester), ('movie_name', '=', rec.movie_name)
-                 ])
-        if len(result) > 1:
-            raise ValidationError(_('Requester must not have more than request in same day.'))
-
-    @api.onchange('tickets_sold', 'movie_name')
+    @api.onchange('tickets_sold')
     def _onchange_ticket_sold(self):
         if self.tickets_sold:
             self.description = 'Tickets are sold out'
@@ -93,9 +93,11 @@ class Partner(models.Model):
             if rec.phone and len(rec.phone) < 10:
                 raise ValidationError(_('Phone number must not be less than 10 !'))
 
-    # sql constraints unique name
-    # _sql_constraints = [
-    #     ('name_uniq', 'unique (name)', "Name must be Unique per record !"),
-    # ]
-    # sql constraints unique email
-    _sql_constraints = [('email_uniq', 'unique (email)', 'Email must be Unique for person!'), ]
+    @api.constrains('name')
+    def _check_unique_name(self):
+        for rec in self:
+            result = self.env['res.partner'].search(
+                [('name', '!=', rec.name)
+                 ])
+            if len(result) == rec.name:
+                raise ValidationError(_('Name must be unique !'))

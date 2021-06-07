@@ -8,7 +8,7 @@
             <field name="model">film.film</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="movie_name"/>
+                    <field name="name"/>
                     <field name="movie_duration"/>
                     <field name="currency_id"/>
                     <field name="price"/>
@@ -29,7 +29,7 @@
                         </div>
                         <group>
                             <group string="Schedule">
-                                <field name="movie_name"/>
+                                <field name="name"/>
                                 <field name="movie_date"/>
                                 <field name="movie_duration" widget="float_time"/>
                             </group>
@@ -50,13 +50,6 @@
                                         </group>
                                     </group>
                                 </page>
-                                <page name="requester" string="Requester">
-                                    <group>
-                                        <group>
-                                            <field name="requester"/>
-                                        </group>
-                                    </group>
-                                </page>
                             </notebook>
                         </group>
                     </sheet>
@@ -69,7 +62,7 @@
             <field name="model">film.film</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="movie_name"/>
+
                     <field name="movie_date"/>
                     <separator/>
                     <filter name="date_filter" string="Movie Date" date="movie_date"/>

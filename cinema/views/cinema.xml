@@ -8,7 +8,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="show_hall"/>
-                    <field name="name"/>
+                    <field name="movie_name"/>
+                    <field name="requester"/>
                     <field name="halls_supervisor"/>
                     <field name="nums_sets"/>
                 </tree>
@@ -30,12 +31,14 @@
                             <group>
                                 <field name="show_hall" help="Hall Name"/>
                                 <field name="halls_supervisor"/>
-                                <field name="name"/>
+                                <field name="movie_name"/>
+
                             </group>
                         </group>
                         <group>
                             <group>
                                 <field name="nums_sets"/>
+                                <field name="requester"/>
                                 <field name="reserved_seat_no"/>
                             </group>
                         </group>
@@ -56,13 +59,14 @@
             <field name="model">cinema.show</field>
             <field name="arch" type="xml">
                 <search>
+                    <field name="movie_name"/>
                     <field name="show_hall"/>
                     <field name="halls_supervisor"/>
                     <separator/>
                     <filter string="Show Hall" name="show hall" domain="[('show_hall','=','Affra')]"/>
                     <filter string="Hall Supervisor" name="hall supervisor"
                             domain="[('halls_supervisor','!=','Hassan')]"/>
-                    <filter string="Name" name="movie name" domain="[('name','in','name')]"/>
+                    <filter string="Name" name="movie name" domain="[('movie_name','in','movie_name')]"/>
                     <group expand="1" string="Group by">
                         <filter string="Supervisor" name="group by supervisor"
                                 context="{'group_by': 'halls_supervisor'}"/>
