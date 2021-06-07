@@ -3,73 +3,99 @@
     <data>
         <!-- list view of film-->
 
-        <record model="ir.ui.view" id="film_list">
-            <field name="name">Films List</field>
+        <record model="ir.ui.view" id="view_film_tree">
+            <field name="name">Movies List</field>
             <field name="model">film.film</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="f_name" string="Name"/>
-                    <field name="type" string="Category"/>
-                    <field name="date"/>
+                    <field name="movie_name"/>
+                    <field name="movie_duration"/>
+                    <field name="currency_id"/>
+                    <field name="price"/>
                 </tree>
             </field>
         </record>
-        <!--form view of film-->
-        <record model="ir.ui.view" id="film_form">
-            <field name="name">Film form view</field>
+        <!--form view of movie-->
+        <record model="ir.ui.view" id="view_film_form">
+            <field name="name">Movie form view</field>
             <field name="model">film.film</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="sequence" style="font-type:Times New Roman;color:green"/>
+                            </h1>
+                        </div>
                         <group>
-                            <group>
-                                <field name="f_name"/>
-                                <field name="type"/>
+                            <group string="Schedule">
+                                <field name="movie_name"/>
+                                <field name="movie_date"/>
+                                <field name="movie_duration" widget="float_time"/>
+                            </group>
+                            <group string="Payment">
+                                <field name="price"/>
+                                <field name="currency_id"/>
                             </group>
                         </group>
                         <group>
-                            <group>
-                                <field name="date"/>
-                                <field name="info"/>
-                            </group>
+                            <notebook>
+                                <page name="ticket_info" string="Ticket Info">
+                                    <group>
+                                        <group>
+                                            <group>
+                                                <field name="tickets_sold"/>
+                                                <field name="description"/>
+                                            </group>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page name="requester" string="Requester">
+                                    <group>
+                                        <group>
+                                            <field name="requester"/>
+                                        </group>
+                                    </group>
+                                </page>
+                            </notebook>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
         <!--Film search view -->
-        <record model="ir.ui.view" id="film_search_view">
-            <field name="name">Film Search</field>
+        <record model="ir.ui.view" id="view_search_movie">
+            <field name="name">Movie Search</field>
             <field name="model">film.film</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="f_name"/>
-                    <field name="type"/>
-                    <filter name="film_type" string="Film Type"
-                            domain="[('type','=','A')]"/>
+                    <field name="movie_name"/>
+                    <field name="movie_date"/>
+                    <separator/>
+                    <filter name="date_filter" string="Movie Date" date="movie_date"/>
+                    <separator/>
                 </search>
             </field>
         </record>
-        <!--actions opening views on film-->
+        <!--actions opening views on movie-->
 
         <record model="ir.actions.act_window" id="film_action_window">
             <field name="name">
-                Films
+                Movies
             </field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">film.film</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    create a new film!
+                    create a new movie!
                 </p>
             </field>
         </record>
 
-        <menuitem name="Films" id="film_main_menu" parent="cinema_menu_root"
-                  sequence="4"
+        <menuitem name="Movies" id="films_main_menu" parent="cinema_menu_root"
+                  sequence="3" action="film_action_window"
         />
-        <menuitem name="Film" id="film_sub_menu" parent="film_main_menu"
-                  sequence="5" action="film_action_window"/>
+
     </data>
 </odoo>
