@@ -2,7 +2,7 @@
 import datetime
 
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError, UserError
+from odoo.exceptions import ValidationError
 
 
 class Cinema(models.Model):
@@ -34,18 +34,6 @@ class Cinema(models.Model):
             result.append((record.id, record.show_hall + '/' + str(record.start)))
 
         return result
-
-    def smart_button(self):
-        for rec in self:
-            return {
-                'name': _('Cinema'),
-                'view_type': 'tree',
-                'view_mode': 'tree,form',
-                'res_model': 'cinema.show',
-                'type': 'ir.action.act_window',
-                'domain': [()],
-
-            }
 
 
 class Film(models.Model):
@@ -96,8 +84,6 @@ class Partner(models.Model):
     @api.constrains('name')
     def _check_unique_name(self):
         for rec in self:
-            result = self.env['res.partner'].search(
-                [('name', '!=', rec.name)
-                 ])
-            if len(result) == rec.name:
-                raise ValidationError(_('Name must be unique !'))
+            result = self.env['res.partner'].search([('name', 'ilike', rec.name)])
+            if len(result) > 1:
+                raise ValidationError(_('Partner Name must be unique !'))

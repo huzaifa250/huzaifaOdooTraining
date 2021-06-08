@@ -23,9 +23,9 @@
                 <form>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button class="oe_stat_button" name="smart_button"
+                            <button class="oe_stat_button" name="%(reservation_action_window)d"
                                     string="Reservation Ids"
-                                    type="object" icon="fa-sitemap" widget="statinfo"/>
+                                    type="action" icon="fa-sitemap" widget="statinfo"/>
                         </div>
                         <group>
                             <group>
@@ -84,12 +84,14 @@
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_global_click">
                                 <div>
-                                    <strong>
+                                    <small>
                                         <field name="show_hall"/>
                                         <span class="float-right">
                                             <field name="nums_sets"/>
+                                            <field name="requester"/>
+
                                         </span>
-                                    </strong>
+                                    </small>
                                 </div>
 
                             </div>
