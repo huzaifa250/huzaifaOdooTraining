@@ -1,0 +1,345 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cinema
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20210510\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-08 09:10+0000\n"
+"PO-Revision-Date: 2021-06-08 09:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cinema
+#: model:ir.actions.act_window,name:cinema.film_action_window
+msgid ""
+"\n"
+"                Movies\n"
+"            "
+msgstr ""
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_show
+msgid "An Erp System for Cinema"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.create_show_wizard_view_form
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: cinema
+#: model:ir.actions.act_window,name:cinema.cinema_action_window
+#: model:ir.ui.menu,name:cinema.cinema_menu_root
+#: model:ir.ui.menu,name:cinema.cinema_sub_menu
+msgid "Cinema"
+msgstr "السينما"
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_show_view_graph
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_show_view_pivot
+#: model_terms:ir.ui.view,arch_db:cinema.view_cinema_calendar
+msgid "Cinema Show"
+msgstr ""
+
+#. module: cinema
+#: model:ir.actions.act_window,name:cinema.create_show_wizard_action
+msgid "Cinema Show Wizard"
+msgstr ""
+
+#. module: cinema
+#: model:ir.ui.menu,name:cinema.cinema_wizard_menu
+#: model_terms:ir.ui.view,arch_db:cinema.create_show_wizard_view_form
+msgid "Cinema Wizard"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__create_uid
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__create_uid
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__create_uid
+#: model:ir.model.fields,field_description:cinema.field_film_film__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__create_date
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__create_date
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__create_date
+#: model:ir.model.fields,field_description:cinema.field_film_film__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_film_film__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_film_film__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__display_name
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__display_name
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__display_name
+#: model:ir.model.fields,field_description:cinema.field_film_film__display_name
+#: model:ir.model.fields,field_description:cinema.field_res_partner__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
+msgid "Group by"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_form
+msgid "Hall Name"
+msgstr "اسم القاعة"
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
+msgid "Hall Supervisor"
+msgstr "مشرف القاعة"
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__id
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__id
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__id
+#: model:ir.model.fields,field_description:cinema.field_film_film__id
+#: model:ir.model.fields,field_description:cinema.field_res_partner__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show____last_update
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation____last_update
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard____last_update
+#: model:ir.model.fields,field_description:cinema.field_film_film____last_update
+#: model:ir.model.fields,field_description:cinema.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__write_uid
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__write_uid
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__write_uid
+#: model:ir.model.fields,field_description:cinema.field_film_film__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__write_date
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__write_date
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__write_date
+#: model:ir.model.fields,field_description:cinema.field_film_film__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__m2m_real
+msgid "Many2Many"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_film_film__movie_date
+#: model_terms:ir.ui.view,arch_db:cinema.view_search_movie
+msgid "Movie Date"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_film_film__movie_duration
+msgid "Movie Duration"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__movie_name
+msgid "Movie Name"
+msgstr ""
+
+#. module: cinema
+#: model:ir.ui.menu,name:cinema.films_main_menu
+msgid "Movies"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_film_film__name
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
+msgid "Name"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__nums_sets
+msgid "Number of Sets"
+msgstr ""
+
+#. module: cinema
+#: code:addons/cinema/models/models.py:0
+#, python-format
+msgid "Partner Name must be unique !"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.view_film_form
+msgid "Payment"
+msgstr ""
+
+#. module: cinema
+#: code:addons/cinema/models/models.py:0
+#, python-format
+msgid "Phone number must not be less than 10 !"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_film_film__price
+msgid "Price"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__requester
+msgid "Requester"
+msgstr ""
+
+#. module: cinema
+#: code:addons/cinema/models/models.py:0
+#, python-format
+msgid "Requester must not have more than request in same day."
+msgstr ""
+
+#. module: cinema
+#: model:ir.actions.act_window,name:cinema.reservation_action_window
+#: model:ir.ui.menu,name:cinema.cinema_reservation_menu_root
+msgid "Reservation"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__reservation_ids
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_form
+msgid "Reservation Ids"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_reservation_form
+msgid "ReservationM2m"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__reserve_id_inverse
+msgid "Reserve"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_form
+msgid "Reserve Ids"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__reserved_seat_no
+msgid "Reserved Seats Number"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.view_film_form
+msgid "Schedule"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_film_film__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__show
+msgid "Show"
+msgstr ""
+
+#. module: cinema
+#: code:addons/cinema/wizard/create_show.py:0
+#, python-format
+msgid "Show By Date"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__date
+msgid "Show Date"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__show_hall
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
+msgid "Show Hall"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__start
+msgid "Start Date"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.create_show_wizard_view_form
+msgid "Submit"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_cinema_show__halls_supervisor
+#: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
+msgid "Supervisor"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.ui.view,arch_db:cinema.view_film_form
+msgid "Ticket Info"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model.fields,field_description:cinema.field_create_show_wizard__tickets_sold
+#: model:ir.model.fields,field_description:cinema.field_film_film__tickets_sold
+msgid "Tickets are Sold out"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_show_reservation
+msgid "cinema.show.reservation"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.actions.act_window,help:cinema.film_action_window
+msgid "create a new movie!"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.actions.act_window,help:cinema.cinema_action_window
+msgid "create a new records!"
+msgstr ""
+
+#. module: cinema
+#: model_terms:ir.actions.act_window,help:cinema.reservation_action_window
+msgid "create new record!"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_create_show_wizard
+msgid "create.show.wizard"
+msgstr ""
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_film_film
+msgid "film.film"
+msgstr ""
+
+#. module: cinema
+#: code:addons/cinema/models/models.py:0
+#, python-format
+msgid "new"
+msgstr ""
