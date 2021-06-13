@@ -7,7 +7,7 @@
     'description': """
        An Erp System to Manage Cinema
         Manage audience and halls
-       Mange ticket and events
+       Manage tickets and events
     """,
 
     'author': "Huzaifa",
@@ -21,12 +21,15 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'wizard/create_show_wizard.xml',
+        'data/data.xml',
         'views/cinema.xml',
         'views/film.xml',
         'views/cinema_reservation.xml',
         'data/sequence.xml',
-        'views/templates.xml',
+        'reports/report.xml',
+        'reports/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

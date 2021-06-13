@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <template id="report_cinema_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <header>
+                            <div style="float:left;border-bottom:2px solid black; border-color:#1f7 ">
+                                <p style="font-size:32px;color:#1f7b91">
+                                    Huz Soft Company
+                                </p>
+                                <br/>
+                                <br/>
+                                <p style="font-size:22px;color:#1f7b91">
+                                    Cinema Management System
+                                </p>
+
+                                <br/>
+                                <strong>Cinema:</strong>
+                                <p t-esc="o.movie_name.movie_date"/>
+                                <strong>Start Date</strong>
+                                <p t-esc="o.start"/>
+                                <strong>Hall</strong>
+                                <p t-esc="o.show_hall"/>
+                                <strong>Number of Sets</strong>
+                                <p t-esc="o.nums_sets"/>
+                                <strong>Reserve Seats Number</strong>
+                                <p t-esc="o.reserved_seat_no"/>
+                            </div>
+                        </header>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <template id="report_film_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="ob">
+                        <div class="row mt32">
+                            <div class="col-3">
+                                <strong>Movie:</strong>
+                                <p t-esc="ob.name"/>
+                                <strong>Date</strong>
+                                <p t-esc="ob.movie_date"/>
+                                <strong>Duration</strong>
+                                <p t-esc="ob.movie_duration"/>
+                                <strong>Price</strong>
+                                <p t-esc="ob.price"/>
+
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <template id="report_reservation_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="re">
+                        <div class="row mt32">
+                            <div class="col-3">
+                                <strong>Reservation:</strong>
+                                <p t-esc="re.show.start"/>
+                                <p t-esc="re.reserve_id_inverse.reserved_seat_no"/>
+                                <t t-foreach="re.m2m_real" t-as="pa">
+                                    <p t-esc="pa.name"/>
+                                    <p t-esc="pa.email"/>
+                                    <p t-esc="pa.phone"/>
+                                </t>
+                            </div>
+
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

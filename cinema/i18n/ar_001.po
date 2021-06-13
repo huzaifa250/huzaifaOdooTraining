@@ -145,99 +145,99 @@ msgstr ""
 #: model:ir.model.fields,field_description:cinema.field_create_show_wizard__write_date
 #: model:ir.model.fields,field_description:cinema.field_film_film__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "اخر تعديل"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__m2m_real
 msgid "Many2Many"
-msgstr ""
+msgstr "علاقة"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_film_film__movie_date
 #: model_terms:ir.ui.view,arch_db:cinema.view_search_movie
 msgid "Movie Date"
-msgstr ""
+msgstr "تاريخ الفيلم"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_film_film__movie_duration
 msgid "Movie Duration"
-msgstr ""
+msgstr "مدة الفيلم"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__movie_name
 msgid "Movie Name"
-msgstr ""
+msgstr "اسم الفيلم"
 
 #. module: cinema
 #: model:ir.ui.menu,name:cinema.films_main_menu
 msgid "Movies"
-msgstr ""
+msgstr "الافلام"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_film_film__name
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__nums_sets
 msgid "Number of Sets"
-msgstr ""
+msgstr "عدد المقاعد"
 
 #. module: cinema
 #: code:addons/cinema/models/models.py:0
 #, python-format
 msgid "Partner Name must be unique !"
-msgstr ""
+msgstr "اسم الزبون يجب ان يكون فريد"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.view_film_form
 msgid "Payment"
-msgstr ""
+msgstr "الدفع"
 
 #. module: cinema
 #: code:addons/cinema/models/models.py:0
 #, python-format
 msgid "Phone number must not be less than 10 !"
-msgstr ""
+msgstr "يجب ان لا يقل الرقم عن 10"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_film_film__price
 msgid "Price"
-msgstr ""
+msgstr "السعر"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__requester
 msgid "Requester"
-msgstr ""
+msgstr "الطلب"
 
 #. module: cinema
 #: code:addons/cinema/models/models.py:0
 #, python-format
 msgid "Requester must not have more than request in same day."
-msgstr ""
+msgstr "لايمكن طلب اكثر من مرة في اليوم"
 
 #. module: cinema
 #: model:ir.actions.act_window,name:cinema.reservation_action_window
 #: model:ir.ui.menu,name:cinema.cinema_reservation_menu_root
 msgid "Reservation"
-msgstr ""
+msgstr "الحجوزات"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__reservation_ids
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_form
 msgid "Reservation Ids"
-msgstr ""
+msgstr "رقم الحجز"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_reservation_form
 msgid "ReservationM2m"
-msgstr ""
+msgstr "حجز علاقة"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__reserve_id_inverse
 msgid "Reserve"
-msgstr ""
+msgstr "حجز"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_form
@@ -247,66 +247,66 @@ msgstr ""
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__reserved_seat_no
 msgid "Reserved Seats Number"
-msgstr ""
+msgstr "عدد المقاعد المحجوزة"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.view_film_form
 msgid "Schedule"
-msgstr ""
+msgstr "جدولة"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_film_film__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "تسلسل رقمي"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__show
 msgid "Show"
-msgstr ""
+msgstr "العرض"
 
 #. module: cinema
 #: code:addons/cinema/wizard/create_show.py:0
 #, python-format
 msgid "Show By Date"
-msgstr ""
+msgstr "عرض بالتاريخ"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_create_show_wizard__date
 msgid "Show Date"
-msgstr ""
+msgstr "تاريخ العرض "
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__show_hall
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
 msgid "Show Hall"
-msgstr ""
+msgstr "القاعة"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__start
 msgid "Start Date"
-msgstr ""
+msgstr "تاريخ البداية"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.create_show_wizard_view_form
 msgid "Submit"
-msgstr ""
+msgstr "قبول"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__halls_supervisor
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_search_view
 msgid "Supervisor"
-msgstr ""
+msgstr "المشرف"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.view_film_form
 msgid "Ticket Info"
-msgstr ""
+msgstr "معلومات التزكرة"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_create_show_wizard__tickets_sold
 #: model:ir.model.fields,field_description:cinema.field_film_film__tickets_sold
 msgid "Tickets are Sold out"
-msgstr ""
+msgstr "التزكرة اتباعت"
 
 #. module: cinema
 #: model:ir.model,name:cinema.model_cinema_show_reservation
@@ -316,7 +316,7 @@ msgstr ""
 #. module: cinema
 #: model_terms:ir.actions.act_window,help:cinema.film_action_window
 msgid "create a new movie!"
-msgstr ""
+msgstr "اعمل فيلم جديد"
 
 #. module: cinema
 #: model_terms:ir.actions.act_window,help:cinema.cinema_action_window
@@ -342,4 +342,4 @@ msgstr ""
 #: code:addons/cinema/models/models.py:0
 #, python-format
 msgid "new"
-msgstr ""
+msgstr "جديد"

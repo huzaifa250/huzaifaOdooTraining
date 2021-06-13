@@ -63,10 +63,9 @@
                     <field name="show_hall"/>
                     <field name="halls_supervisor"/>
                     <separator/>
-                    <filter string="Show Hall" name="show hall" domain="[('show_hall','=','Affra')]"/>
+                    <filter string="Show Hall" name="show hall" domain="[('show_hall','=','show_hall')]"/>
                     <filter string="Hall Supervisor" name="hall supervisor"
                             domain="[('halls_supervisor','!=','Hassan')]"/>
-                    <filter string="Name" name="movie name" domain="[('movie_name','in','movie_name')]"/>
                     <group expand="1" string="Group by">
                         <filter string="Supervisor" name="group by supervisor"
                                 context="{'group_by': 'halls_supervisor'}"/>
@@ -115,7 +114,8 @@
             <field name="name">cinema.show.calendar</field>
             <field name="model">cinema.show</field>
             <field name="arch" type="xml">
-                <calendar color="show_hall" date_start="start" string="Cinema Show" mode="month">
+                <calendar color="show_hall" date_start="start" string="Cinema Show" mode="month"
+                >
                     <field name="show_hall"/>
                     <field name="nums_sets"/>
                 </calendar>
@@ -147,9 +147,9 @@
                 </p>
             </field>
         </record>
-        <menuitem name="Cinema" id="cinema_menu_root" sequence="1"/>
+        <menuitem name="Cinema" id="cinema_menu_root" sequence="1" groups="cinema.group_cinema_admin"/>
         <menuitem name="Cinema" id="cinema_sub_menu" parent="cinema_menu_root" sequence="2"
-                  action="cinema_action_window"
+                  action="cinema_action_window" groups="cinema.group_cinema_admin"
         />
         <menuitem name="Cinema Wizard" id="cinema_wizard_menu" parent="cinema_menu_root" sequence="5"
                   action="create_show_wizard_action"

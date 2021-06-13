@@ -7,7 +7,7 @@
             <form string="Cinema Wizard">
                 <group>
                     <field name="date"/>
-                    <field name="tickets_sold"/>
+<!--                    <field name="tickets_sold"/>-->
                 </group>
 
                 <footer>

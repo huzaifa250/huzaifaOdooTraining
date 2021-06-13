@@ -40,7 +40,7 @@ class Film(models.Model):
     _name = 'film.film'
 
     name = fields.Char('Name', required=True)
-    movie_duration = fields.Float('Movie Duration')
+    movie_duration = fields.Float('Movie Duration', default=1.30)
     currency_id = fields.Many2one('res.currency', string='Currency')
     price = fields.Monetary('Price', required=True)
     movie_date = fields.Date('Movie Date', default=lambda self: fields.datetime.now())
@@ -78,12 +78,12 @@ class Partner(models.Model):
     @api.constrains('phone')
     def _check_phone_number(self):
         for rec in self:
-            if rec.phone and len(rec.phone) < 10:
-                raise ValidationError(_('Phone number must not be less than 10 !'))
+            if rec.phone and len(rec.phone) != 10:
+                raise ValidationError(_('Phone number must be 10 digits !'))
 
     @api.constrains('name')
     def _check_unique_name(self):
         for rec in self:
-            result = self.env['res.partner'].search([('name', 'ilike', rec.name)])
+            result = self.env['res.partner'].search([('name', '=', rec.name)])
             if len(result) > 1:
                 raise ValidationError(_('Partner Name must be unique !'))

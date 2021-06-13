@@ -58,7 +58,7 @@
             </field>
         </record>
         <menuitem name="Reservation" id="cinema_reservation_menu_root" parent="cinema_menu_root"
-                  sequence="4" action="reservation_action_window"
+                  sequence="4" action="reservation_action_window" groups="cinema.group_cinema_admin"
         />
     </data>
 </odoo>
