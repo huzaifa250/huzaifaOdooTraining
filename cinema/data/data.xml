@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="cinema_data_id" model="cinema.show">
+            <field name="show_hall">A-Show Hall</field>
+            <field name="nums_sets">500</field>
+            <field name="reserved_seat_no">15</field>
+        </record>
+
+    </data>
+</odoo>

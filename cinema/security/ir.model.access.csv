@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cinema_show_manager,cinema.show manager,cinema.model_cinema_show,cinema.group_manager,1,1,1,1
+access_cinema_show_user,cinema.show.user,model_cinema_show,cinema.group_user,1,1,0,0
+access_cinema_film_manager,film.film manager,cinema.model_film_film,cinema.group_manager,1,1,1,1
+access_cinema_film_user,film.film.user,model_film_film,cinema.group_user,1,1,0,0
+access_cinema_show_reservation_manager,cinema.show.reservation manager,model_cinema_show_reservation,cinema.group_manager,1,1,1,1
+access_cinema_show_reservation_user,cinema.show.reservation user,model_cinema_show_reservation,cinema.group_user,1,1,0,0
+access_create_show_wizard_manager,create.show.wizard manager,model_create_show_wizard,cinema.group_manager,1,1,1,1
+access_create_show_wizard_user,create.show.wizard.user,model_create_show_wizard,cinema.group_user,0,0,0,0
+

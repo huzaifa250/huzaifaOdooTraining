@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <report
+                id="cinema_report"
+                model="cinema.show"
+                string="Show Report"
+                name="cinema.report_cinema_template"
+                report_type="qweb-pdf"/>
+        <report
+                id="film_report"
+                model="film.film"
+                string="Movie Report"
+                name="cinema.report_film_template"
+                report_type="qweb-pdf"/>
+        <report
+                id="reservation_report"
+                model="cinema.show.reservation"
+                string="Reservation Report"
+                name="cinema.report_reservation_template"
+                report_type="qweb-pdf"/>
+
+
+    </data>
+</odoo>
