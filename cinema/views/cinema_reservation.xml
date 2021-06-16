@@ -28,12 +28,12 @@
                         <group>
                             <notebook>
 
-                                <page name="reserve" string="ReservationM2m">
+                                <page name="reserve" string="Reservation">
                                     <group>
-
-                                        <field name="m2m_real" widget="many2many"/>
+                                        <group>
+                                            <field name="m2m_real" widget="many2many_tags"/>
+                                        </group>
                                     </group>
-
 
                                 </page>
 
@@ -58,7 +58,7 @@
             </field>
         </record>
         <menuitem name="Reservation" id="cinema_reservation_menu_root" parent="cinema_menu_root"
-                  sequence="4" action="reservation_action_window" groups="cinema.group_cinema_admin"
+                  sequence="4" action="reservation_action_window" groups="cinema.group_manager,cinema.group_user"
         />
     </data>
 </odoo>

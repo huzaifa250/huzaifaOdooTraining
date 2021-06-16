@@ -87,7 +87,7 @@
         </record>
 
         <menuitem name="Movies" id="films_main_menu" parent="cinema_menu_root"
-                  sequence="3" action="film_action_window" groups="cinema.group_cinema_admin"
+                  sequence="3" action="film_action_window" groups="cinema.group_manager,cinema.group_user"
         />
 
     </data>

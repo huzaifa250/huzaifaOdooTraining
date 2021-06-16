@@ -24,15 +24,15 @@
                     <sheet>
                         <div class="oe_button_box" name="button_box">
                             <button class="oe_stat_button" name="%(reservation_action_window)d"
-                                    string="Reservation Ids"
-                                    type="action" icon="fa-sitemap" widget="statinfo"/>
+                                    string="Reservation Ids" type="action" icon="fa-bars"
+                                    confirm="Are You sure you want to go there ?"/>
                         </div>
-                        <group>
+                        <group col="2">
                             <group>
+
                                 <field name="show_hall" help="Hall Name"/>
                                 <field name="halls_supervisor"/>
                                 <field name="movie_name"/>
-
                             </group>
                         </group>
                         <group>
@@ -43,9 +43,21 @@
                             </group>
                         </group>
                         <notebook>
-                            <page name="reserve_ids" string="Reserve Ids">
+                            <page name="reserve" string="Reserve">
+                                <group expand="0">
+                                    <field name="reservation_ids" string="Reserve Process">
+                                        <tree editable="bottom">
+                                            <field name="reserve_id_inverse"/>
+                                            <field name="show"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="company" string="Company">
                                 <group>
-                                    <field name="reservation_ids"/>
+                                    <group>
+                                        <field name="company_id" groups="base.group_multi_company"/>
+                                    </group>
                                 </group>
                             </page>
                         </notebook>
@@ -88,7 +100,6 @@
                                         <span class="float-right">
                                             <field name="nums_sets"/>
                                             <field name="requester"/>
-
                                         </span>
                                     </small>
                                 </div>
@@ -147,13 +158,10 @@
                 </p>
             </field>
         </record>
-        <menuitem name="Cinema" id="cinema_menu_root" sequence="1" groups="cinema.group_cinema_admin"/>
+        <menuitem name="Cinema" id="cinema_menu_root" sequence="1"/>
         <menuitem name="Cinema" id="cinema_sub_menu" parent="cinema_menu_root" sequence="2"
-                  action="cinema_action_window" groups="cinema.group_cinema_admin"
-        />
-        <menuitem name="Cinema Wizard" id="cinema_wizard_menu" parent="cinema_menu_root" sequence="5"
-                  action="create_show_wizard_action"
-        />
+                  action="cinema_action_window" groups="cinema.group_manager,cinema.group_user"/>
+
 
     </data>
 </odoo>

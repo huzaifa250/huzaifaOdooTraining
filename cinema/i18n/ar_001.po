@@ -45,7 +45,7 @@ msgstr "السينما"
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_show_view_pivot
 #: model_terms:ir.ui.view,arch_db:cinema.view_cinema_calendar
 msgid "Cinema Show"
-msgstr ""
+msgstr "عرض السينما"
 
 #. module: cinema
 #: model:ir.actions.act_window,name:cinema.create_show_wizard_action

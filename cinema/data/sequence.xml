@@ -7,7 +7,7 @@
              <field name="name">Movies Sequence</field>
              <field name="code">film.film</field>
              <field name="active">TRUE</field>
-             <field name="prefix">Request/%(range_year)s/%(range_month)s/</field>
+             <field name="prefix">Movie/%(range_year)s/%(range_month)s/</field>
              <field name="padding">6</field>
              <field name="number_next">1</field>
              <field name="number_increment">1</field>

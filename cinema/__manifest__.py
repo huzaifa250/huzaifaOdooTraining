@@ -6,8 +6,8 @@
 
     'description': """
        An Erp System to Manage Cinema
-        Manage audience and halls
-       Manage tickets and events
+        Manage Films and info 
+       Manage  Reservation and tickets
     """,
 
     'author': "Huzaifa",
@@ -22,11 +22,11 @@
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
-        'wizard/create_show_wizard.xml',
-        'data/data.xml',
+        # 'data/data.xml',
         'views/cinema.xml',
         'views/film.xml',
         'views/cinema_reservation.xml',
+        'wizard/create_show_wizard.xml',
         'data/sequence.xml',
         'reports/report.xml',
         'reports/templates.xml',

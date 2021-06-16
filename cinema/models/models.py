@@ -9,15 +9,19 @@ class Cinema(models.Model):
     _name = 'cinema.show'
     _description = 'An Erp System for Cinema'
     _rec_name = 'movie_name'
+    _check_company_auto = True  # ensure multi-company consistency
 
-    movie_name = fields.Many2one('film.film', string='Movie Name')
+    movie_name = fields.Many2one('film.film', 'Movie Name')
     start = fields.Date('Start Date', default=lambda self: fields.Date.today())
     show_hall = fields.Char('Show Hall', copy=True, required=True)
     nums_sets = fields.Integer('Number of Sets', required=True)
     reserved_seat_no = fields.Integer('Reserved Seats Number')
-    halls_supervisor = fields.Many2one('hr.employee', string='Supervisor')
+    halls_supervisor = fields.Many2one('hr.employee', 'Supervisor', check_company=True)
     requester = fields.Char('Requester', required=True)
-    reservation_ids = fields.One2many('cinema.show.reservation', 'reserve_id_inverse', string='Reservation Ids')
+    reservation_ids = fields.One2many('cinema.show.reservation', 'reserve_id_inverse', string='Reservation Ids',
+                                      )
+
+    company_id = fields.Many2one('res.company', 'Company', required=True, default=lambda self: self.env.company)
 
     @api.constrains('requester', 'movie_name')
     def _check_request_movies(self):
@@ -68,7 +72,7 @@ class CinemaReservation(models.Model):
     _rec_name = 'show'
 
     show = fields.Many2one('cinema.show', string='Show', required=True, ondelete='cascade')
-    m2m_real = fields.Many2many('res.partner', 'cinema_show_relation', string='Many2Many')
+    m2m_real = fields.Many2many('res.partner', 'cinema_show_relation', string='Responsible Person')
     reserve_id_inverse = fields.Many2one('cinema.show', string='Reserve')
 
 

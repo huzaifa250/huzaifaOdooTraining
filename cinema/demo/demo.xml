@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
         <record id="cinema_demo_id" model="cinema.show">
             <field name="requester">Ahmed Khalid</field>
             <field name="show_hall">Friends Hall</field>

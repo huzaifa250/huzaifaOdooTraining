@@ -7,12 +7,13 @@
             <form string="Cinema Wizard">
                 <group>
                     <field name="date"/>
-<!--                    <field name="tickets_sold"/>-->
                 </group>
 
                 <footer>
-                    <button type="object" name="get_date" string="Submit" class="oe_highlight"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    <button type="object" name="get_date" string="Submit" class="oe_highlight"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel"
+                            confirm="Are you sure you need to cancel?"/>
                 </footer>
             </form>
         </field>
@@ -26,4 +27,7 @@
         <field name="view_id" ref="create_show_wizard_view_form"/>
         <field name="target">new</field>
     </record>
+    <menuitem name="Cinema Wizard" id="cinema_wizard_menu" parent="cinema_menu_root" sequence="5"
+              action="create_show_wizard_action" groups="cinema.group_user"
+    />
 </odoo>
