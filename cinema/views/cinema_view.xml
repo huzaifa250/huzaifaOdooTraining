@@ -23,7 +23,7 @@
                 <form>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button class="oe_stat_button" name="%(reservation_action_window)d"
+                            <button class="oe_stat_button" name="%(action_reservation)d"
                                     string="Reservation Ids" type="action" icon="fa-bars"
                                     confirm="Are You sure you want to go there ?"/>
                         </div>
@@ -75,17 +75,19 @@
                     <field name="show_hall"/>
                     <field name="halls_supervisor"/>
                     <separator/>
-                    <filter string="Show Hall" name="show hall" domain="[('show_hall','=','show_hall')]"/>
+                    <filter string="Show Hall" name="show hall"
+                            domain="['|',('show_hall','=','Friends Hall'),('show_hall','ilike','Zara')]"/>
                     <filter string="Hall Supervisor" name="hall supervisor"
-                            domain="[('halls_supervisor','!=','Hassan')]"/>
+                            domain="[('halls_supervisor','=','Administrator')]"/>
                     <group expand="1" string="Group by">
-                        <filter string="Supervisor" name="group by supervisor"
+                        <filter string="Supervisor" name="group_by_supervisor"
                                 context="{'group_by': 'halls_supervisor'}"/>
+                        <filter string="Show Hall" name="show hall" context="{'group_by': 'show_hall'}"/>
                     </group>
-                    <filter string="Show Hall" name="show hall" context="{'group_by': 'show_hall'}"/>
                 </search>
             </field>
         </record>
+        <!--Kanban View -->
         <record id='cinema_show_view_kanban' model='ir.ui.view'>
             <field name="name">Cinema Show View Kanban</field>
             <field name="model">cinema.show</field>

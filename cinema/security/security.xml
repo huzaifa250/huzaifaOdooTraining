@@ -12,7 +12,6 @@
             <field name="name">User</field>
             <field name="category_id" ref="module_category_cinema"/>
 
-
         </record>
 
         <!--Group2 for Manager-->
@@ -22,14 +21,14 @@
             <field name="implied_ids" eval="[(4, ref('group_user'))]"/>
         </record>
 
-        <!-- company Shareable Records-->
+        <!--multi company Shareable Records-->
         <record model="ir.rule" id="cinema_shareable_record_comp_rule">
             <field name="name">Cinema Shareable record: multi-company</field>
             <field name="model_id" ref="model_cinema_show"/>
             <field name="global" eval="True"/>
             <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
         </record>
-        <!-- Company-restricted Records -->
+        <!-- multi Company-restricted Records -->
         <record model="ir.rule" id="cinema_restricted_company_rule">
             <field name="name">Cinema Restricted Record: multi-company</field>
             <field name="model_id" ref="model_cinema_show"/>

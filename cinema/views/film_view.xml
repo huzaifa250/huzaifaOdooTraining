@@ -12,6 +12,7 @@
                     <field name="movie_duration"/>
                     <field name="currency_id"/>
                     <field name="price"/>
+
                 </tree>
             </field>
         </record>
@@ -43,11 +44,11 @@
                                 <page name="ticket_info" string="Ticket Info">
                                     <group>
                                         <group>
-                                            <group>
-                                                <field name="tickets_sold"/>
-                                                <field name="description"/>
-                                            </group>
+                                            <field name="tickets_sold"/>
                                         </group>
+                                    </group>
+                                    <group>
+                                        <field name="description"/>
                                     </group>
                                 </page>
                             </notebook>

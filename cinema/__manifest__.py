@@ -20,11 +20,11 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
         'security/security.xml',
+        'security/ir.model.access.csv',
         # 'data/data.xml',
-        'views/cinema.xml',
-        'views/film.xml',
+        'views/cinema_view.xml',
+        'views/film_view.xml',
         'views/cinema_reservation.xml',
         'wizard/create_show_wizard.xml',
         'data/sequence.xml',

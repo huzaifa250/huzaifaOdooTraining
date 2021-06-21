@@ -46,7 +46,7 @@
         </record>
         <!--actions opening views on models -->
 
-        <record model="ir.actions.act_window" id="reservation_action_window">
+        <record model="ir.actions.act_window" id="action_reservation">
             <field name="name">Reservation</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">cinema.show.reservation</field>
@@ -58,7 +58,7 @@
             </field>
         </record>
         <menuitem name="Reservation" id="cinema_reservation_menu_root" parent="cinema_menu_root"
-                  sequence="4" action="reservation_action_window" groups="cinema.group_manager,cinema.group_user"
+                  sequence="4" action="action_reservation" groups="cinema.group_manager,cinema.group_user"
         />
     </data>
 </odoo>

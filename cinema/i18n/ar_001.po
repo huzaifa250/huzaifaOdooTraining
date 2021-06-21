@@ -21,12 +21,12 @@ msgid ""
 "\n"
 "                Movies\n"
 "            "
-msgstr ""
+msgstr "الافلام"
 
 #. module: cinema
 #: model:ir.model,name:cinema.model_cinema_show
 msgid "An Erp System for Cinema"
-msgstr ""
+msgstr "نظام ادارة سينما"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.create_show_wizard_view_form
@@ -45,12 +45,12 @@ msgstr "السينما"
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_show_view_pivot
 #: model_terms:ir.ui.view,arch_db:cinema.view_cinema_calendar
 msgid "Cinema Show"
-msgstr "عرض السينما"
+msgstr "عروض السينما"
 
 #. module: cinema
 #: model:ir.actions.act_window,name:cinema.create_show_wizard_action
 msgid "Cinema Show Wizard"
-msgstr ""
+msgstr "تاريخ العروض الغير نشطة"
 
 #. module: cinema
 #: model:ir.ui.menu,name:cinema.cinema_wizard_menu
@@ -69,7 +69,7 @@ msgstr "جهة الاتصال"
 #: model:ir.model.fields,field_description:cinema.field_create_show_wizard__create_uid
 #: model:ir.model.fields,field_description:cinema.field_film_film__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "أنشاء بواسطة"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__create_date
@@ -129,7 +129,7 @@ msgstr "المُعرف"
 #: model:ir.model.fields,field_description:cinema.field_film_film____last_update
 #: model:ir.model.fields,field_description:cinema.field_res_partner____last_update
 msgid "Last Modified on"
-msgstr "آخر تعديل في"
+msgstr "آخر تعديل علي"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__write_uid
@@ -137,7 +137,7 @@ msgstr "آخر تعديل في"
 #: model:ir.model.fields,field_description:cinema.field_create_show_wizard__write_uid
 #: model:ir.model.fields,field_description:cinema.field_film_film__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "اخر تحديث بواسطة"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__write_date
@@ -145,12 +145,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:cinema.field_create_show_wizard__write_date
 #: model:ir.model.fields,field_description:cinema.field_film_film__write_date
 msgid "Last Updated on"
-msgstr "اخر تعديل"
+msgstr "اخر تعديل علي"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show_reservation__m2m_real
 msgid "Many2Many"
-msgstr "علاقة"
+msgstr "حجز"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_film_film__movie_date
@@ -209,13 +209,13 @@ msgstr "السعر"
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__requester
 msgid "Requester"
-msgstr "الطلب"
+msgstr "اسم الزبون"
 
 #. module: cinema
 #: code:addons/cinema/models/models.py:0
 #, python-format
 msgid "Requester must not have more than request in same day."
-msgstr "لايمكن طلب اكثر من مرة في اليوم"
+msgstr "لايمكن طلب نفس الفيلم من نفس الشخص في نفس اليوم"
 
 #. module: cinema
 #: model:ir.actions.act_window,name:cinema.reservation_action_window
@@ -227,7 +227,7 @@ msgstr "الحجوزات"
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__reservation_ids
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_form
 msgid "Reservation Ids"
-msgstr "رقم الحجز"
+msgstr "تاريخ ومكان الحجز"
 
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_reservation_form
@@ -242,7 +242,7 @@ msgstr "حجز"
 #. module: cinema
 #: model_terms:ir.ui.view,arch_db:cinema.cinema_form
 msgid "Reserve Ids"
-msgstr ""
+msgstr "نوع الحجز"
 
 #. module: cinema
 #: model:ir.model.fields,field_description:cinema.field_cinema_show__reserved_seat_no
@@ -306,37 +306,37 @@ msgstr "معلومات التزكرة"
 #: model:ir.model.fields,field_description:cinema.field_create_show_wizard__tickets_sold
 #: model:ir.model.fields,field_description:cinema.field_film_film__tickets_sold
 msgid "Tickets are Sold out"
-msgstr "التزكرة اتباعت"
+msgstr "هل التزكرة اتباعت"
 
 #. module: cinema
 #: model:ir.model,name:cinema.model_cinema_show_reservation
 msgid "cinema.show.reservation"
-msgstr ""
+msgstr "عروض السينما "
 
 #. module: cinema
 #: model_terms:ir.actions.act_window,help:cinema.film_action_window
 msgid "create a new movie!"
-msgstr "اعمل فيلم جديد"
+msgstr "انشاء فيلم جديد"
 
 #. module: cinema
 #: model_terms:ir.actions.act_window,help:cinema.cinema_action_window
 msgid "create a new records!"
-msgstr ""
+msgstr "انشاء سجلات جديدة"
 
 #. module: cinema
 #: model_terms:ir.actions.act_window,help:cinema.reservation_action_window
 msgid "create new record!"
-msgstr ""
+msgstr "انشاء سجل جديد"
 
 #. module: cinema
 #: model:ir.model,name:cinema.model_create_show_wizard
 msgid "create.show.wizard"
-msgstr ""
+msgstr "قائمة مؤقتة"
 
 #. module: cinema
 #: model:ir.model,name:cinema.model_film_film
 msgid "film.film"
-msgstr ""
+msgstr "قائمة فيلم"
 
 #. module: cinema
 #: code:addons/cinema/models/models.py:0

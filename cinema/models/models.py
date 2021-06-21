@@ -18,17 +18,14 @@ class Cinema(models.Model):
     reserved_seat_no = fields.Integer('Reserved Seats Number')
     halls_supervisor = fields.Many2one('hr.employee', 'Supervisor', check_company=True)
     requester = fields.Char('Requester', required=True)
-    reservation_ids = fields.One2many('cinema.show.reservation', 'reserve_id_inverse', string='Reservation Ids',
-                                      )
-
+    reservation_ids = fields.One2many('cinema.show.reservation', 'reserve_id_inverse', string='Reservation Ids')
     company_id = fields.Many2one('res.company', 'Company', required=True, default=lambda self: self.env.company)
 
     @api.constrains('requester', 'movie_name')
     def _check_request_movies(self):
         for rec in self:
             result = self.env['cinema.show'].search(
-                [('requester', '=', rec.requester), ('movie_name', '=', rec.movie_name.id)
-                 ])
+                [('requester', '=', rec.requester), ('movie_name', '=', rec.movie_name.id)])
             if len(result) > 1:
                 raise ValidationError(_('Requester must not have more than request in same day.'))
 
