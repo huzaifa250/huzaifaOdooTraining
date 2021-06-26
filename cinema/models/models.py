@@ -21,11 +21,12 @@ class Cinema(models.Model):
     reservation_ids = fields.One2many('cinema.show.reservation', 'reserve_id_inverse', string='Reservation Ids')
     company_id = fields.Many2one('res.company', 'Company', required=True, default=lambda self: self.env.company)
 
-    @api.constrains('requester', 'movie_name')
+    @api.constrains('requester', 'movie_name', 'start')
     def _check_request_movies(self):
         for rec in self:
             result = self.env['cinema.show'].search(
-                [('requester', '=', rec.requester), ('movie_name', '=', rec.movie_name.id)])
+                [('requester', '=', rec.requester), ('movie_name', '=', rec.movie_name.id),
+                 ('start', '=', rec.start)])
             if len(result) > 1:
                 raise ValidationError(_('Requester must not have more than request in same day.'))
 
@@ -41,7 +42,7 @@ class Film(models.Model):
     _name = 'film.film'
 
     name = fields.Char('Name', required=True)
-    movie_duration = fields.Float('Movie Duration', default=1.30)
+    movie_duration = fields.Float('Movie Duration', default=1.030)
     currency_id = fields.Many2one('res.currency', string='Currency')
     price = fields.Monetary('Price', required=True)
     movie_date = fields.Date('Movie Date', default=lambda self: fields.datetime.now())
@@ -79,12 +80,15 @@ class Partner(models.Model):
     @api.constrains('phone')
     def _check_phone_number(self):
         for rec in self:
+            if rec.company_type and len(rec.phone) == 4 and rec.company_type == 'company':
+                return True
+
             if rec.phone and len(rec.phone) != 10:
                 raise ValidationError(_('Phone number must be 10 digits !'))
 
     @api.constrains('name')
     def _check_unique_name(self):
         for rec in self:
-            result = self.env['res.partner'].search([('name', '=', rec.name)])
-            if len(result) > 1:
-                raise ValidationError(_('Partner Name must be unique !'))
+            result = self.env['res.partner'].search([]).filtered(lambda n: n.name == rec.name)
+            if len(result) > 1:  # if i repeat(duplicate) the value of result (name)
+                raise ValidationError(_('Partner Name must be unique !!'))

@@ -2,7 +2,7 @@
     <data>
         <!-- explicit list view definition -->
 
-        <record model="ir.ui.view" id="cinema_list">
+        <record model="ir.ui.view" id="view_cinema_list">
             <field name="name">Cinema List</field>
             <field name="model">cinema.show</field>
             <field name="arch" type="xml">
@@ -16,7 +16,7 @@
             </field>
         </record>
         <!--form view -->
-        <record model="ir.ui.view" id="cinema_form">
+        <record model="ir.ui.view" id="view_cinema_form">
             <field name="name">Cinema Form</field>
             <field name="model">cinema.show</field>
             <field name="arch" type="xml">
@@ -27,25 +27,24 @@
                                     string="Reservation Ids" type="action" icon="fa-bars"
                                     confirm="Are You sure you want to go there ?"/>
                         </div>
-                        <group col="2">
+                        <group>
                             <group>
-
                                 <field name="show_hall" help="Hall Name"/>
                                 <field name="halls_supervisor"/>
                                 <field name="movie_name"/>
+                                <field name="start"/>
                             </group>
-                        </group>
-                        <group>
                             <group>
                                 <field name="nums_sets"/>
                                 <field name="requester"/>
                                 <field name="reserved_seat_no"/>
                             </group>
                         </group>
+
                         <notebook>
                             <page name="reserve" string="Reserve">
                                 <group expand="0">
-                                    <field name="reservation_ids" string="Reserve Process">
+                                    <field name="reservation_ids" widget="one2many" string="Reserve Process">
                                         <tree editable="bottom">
                                             <field name="reserve_id_inverse"/>
                                             <field name="show"/>
